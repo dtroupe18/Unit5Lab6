@@ -2,7 +2,7 @@
  * Created by Dave on 1/23/17.
  */
 
-
+import java.util.Scanner;
 
 public class Queens {
     // n Queens
@@ -75,7 +75,9 @@ public class Queens {
     }
 
     public static void main(String[] args) {
-        int n = 5;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("This program solves the n queens problem. Please enter a number for n: ");
+        int n = scan.nextInt();
         int [][] b = new int[n][n];
         Queens problem = new Queens(n, b);
 
