@@ -1,17 +1,17 @@
-/**
+/*
  * Created by Dave on 1/23/17.
  */
 
-import java.util.Scanner;
 
 public class Queens {
+
     // n Queens
     private final  int N;
     private int[][] board;
 
-    public Queens(int n, int[][] board) {
+    public Queens(int n) {
         N = n;
-        this.board = board;
+        board = new int[n][n];
     }
 
     public void printSolution(int [][] board) {
@@ -74,19 +74,7 @@ public class Queens {
         return false;
     }
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("This program solves the n queens problem. Please enter a number for n: ");
-        int n = scan.nextInt();
-        int [][] b = new int[n][n];
-        Queens problem = new Queens(n, b);
-
-        if (!problem.solveQueens8(b, 0)) {
-            System.out.println("There is no solution");
-        }
-
-        else {
-            problem.printSolution(b);
-        }
+    public int[][] getBoard() {
+        return board;
     }
 }
